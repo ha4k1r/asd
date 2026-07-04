@@ -1,0 +1,29 @@
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+
+$form = New-Object System.Windows.Forms.Form
+$form.Text = 'Загрузка...'
+$form.Size = New-Object System.Drawing.Size(300, 150)
+$form.StartPosition = 'CenterScreen'
+
+$progressBar = New-Object System.Windows.Forms.ProgressBar
+$progressBar.Location = New-Object System.Drawing.Point(20, 20)
+$progressBar.Size = New-Object System.Drawing.Size(250, 30)
+$progressBar.Minimum = 0
+$progressBar.Maximum = 100
+$form.Controls.Add($progressBar)
+
+$button = New-Object System.Windows.Forms.Button
+$button.Text = 'Запустить'
+$button.Location = New-Object System.Drawing.Point(100, 70)
+$button.Size = New-Object System.Drawing.Size(80, 30)
+$button.Add_Click({
+    for ($i = 0; $i -le 100; $i += 10) {
+        $progressBar.Value = $i
+        Start-Sleep -Milliseconds 200
+    }
+    [System.Windows.Forms.MessageBox]::Show('Загрузка завершена!')
+})
+$form.Controls.Add($button)
+
+$form.ShowDialog()
